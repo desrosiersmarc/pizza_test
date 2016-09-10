@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>
+        Show page
+      </h2>
+      <%= @pizza.name %>
+      <p>
+        <%= @pizza.description %>
+      </p>
+      <ul>
+        <% @ingredients.each do |ingredient| %>
+          <li>
+            <%= ingredient.name %>
+          </li>
+        <% end %>
+      </ul>
+      <%= link_to "back", pizzas_path, class: 'btn btn-danger btn-xs' %>
+      <%= link_to "Edit", edit_pizza_path(@pizza), class: "btn btn-primary btn-xs" %>
+    </div>
+  </div>
+</div>

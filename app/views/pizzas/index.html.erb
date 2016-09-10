@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Pizza's list (<%= @pizzas.count %>)</h2>
+
+      <% @pizzas.each do |pizza| %>
+        <p>
+          <%= link_to pizza.name, pizza_path(pizza) %> | <%= pizza.price %>€
+          <%= link_to "Delete", pizza_path(pizza), method: 'delete' %>
+        </p>
+
+        <p>
+          <% pizza.ingredients.each do |ingredient| %>
+            <%= ingredient.name %>|
+          <% end %>
+        </p>
+        <hr>
+        <% end %>
+    </div>
+  </div>
+</div>
