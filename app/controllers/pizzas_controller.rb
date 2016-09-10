@@ -44,6 +44,6 @@ private
   end
 
   def pizza_params
-    params.require(:pizza).permit(:name, :price, :description)
+    params.require(:pizza).permit(:name, :price, :description, photos: [])
   end
 end

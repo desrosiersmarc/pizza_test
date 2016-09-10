@@ -1,15 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h2>Pizza's list (<%= @pizzas.count %>)</h2>
+      <h2>
+        Pizza's list (<%= @pizzas.count %>)
+        <%= link_to "Add a pizza", new_pizza_path, class: "btn btn-primary " %>
+      </h2>
 
       <% @pizzas.each do |pizza| %>
         <p>
           <%= link_to pizza.name, pizza_path(pizza) %> | <%= pizza.price %>€
-          <%= link_to "Delete", pizza_path(pizza), method: 'delete' %>
+          <%= link_to pizza_path(pizza), method: 'delete' do %>
+           <i class='fa fa-trash-o' aria-hidden='true'></i>
+          <% end %>
         </p>
 
         <p>
+          <i class="fa fa-cutlery" aria-hidden="true"></i>
           <% pizza.ingredients.each do |ingredient| %>
             <%= ingredient.name %>|
           <% end %>
