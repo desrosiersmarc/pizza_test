@@ -6,6 +6,9 @@ class CartsController < ApplicationController
     @pizzas = Pizza.all
   end
 
+  def new
+  end
+
   def create
 
   end
