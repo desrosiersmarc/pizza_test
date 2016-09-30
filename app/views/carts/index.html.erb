@@ -1,1 +1,15 @@
-<h2>We are in the cart place</h2>
+<h4>My cart</h4>
+
+<div class="container">
+  <div class="row">
+      <% @carts.each do |cart| %>
+    <div class="col-xs-12 col-sm-6">
+        <p>
+          <%= Pizza.find(cart.pizza_id).name %>
+          <%= link_to "Delete", pizzas_path, class: 'btn btn-warning btn-xs'%>
+        </p>
+        <%= cl_image_tag Pizza.find(cart.pizza.id).photos.first.path %>
+    </div>
+      <% end %>
+  </div>
+</div>

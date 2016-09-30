@@ -3,6 +3,7 @@ class CartsController < ApplicationController
 
   def index
     @carts = Cart.all
+    @pizzas = Pizza.all
   end
 
   def create
