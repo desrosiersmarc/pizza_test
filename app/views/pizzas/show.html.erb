@@ -22,7 +22,10 @@
       </ul>
       <%= link_to "back", pizzas_path, class: 'btn btn-danger btn-xs' %>
       <%= link_to "Edit", edit_pizza_path(@pizza), class: 'btn btn-primary btn-xs' %>
-      <%= link_to "add basket", carts_path, class: 'btn btn-warning btn-xs'%>
+      <%= simple_form_for(@cart, html: {method: :post}) do |f| %>
+        <%= f.input :pizza_id, as: :hidden, input_html: {value: @pizza.id} %>
+        <%= f.button :submit, "Add basket", class: 'btn btn-warning btn-xs' %>
+      <% end %>
     </div>
   </div>
 </div>

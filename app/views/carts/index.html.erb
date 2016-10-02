@@ -7,11 +7,13 @@
         <p>
           <%= Pizza.find(cart.pizza_id).name %>
           <%= link_to "Delete", pizzas_path, class: 'btn btn-warning btn-xs'%>
-          <%= simple_form_for cart.pizza do |f| %>
-            <%= f.input :id, input_html: {value: cart.pizza_id} %>
-          <% end %>
         </p>
-        <%= cl_image_tag Pizza.find(cart.pizza.id).photos.first.path %>
+        <%=
+          cl_image_tag Pizza.find(cart.pizza.id).photos.first.path,
+          width: 300,
+          height: 200,
+          crop: :fill
+        %>
     </div>
       <% end %>
   </div>

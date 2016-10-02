@@ -8,6 +8,7 @@ class PizzasController < ApplicationController
 
   def show
     @ingredients = @pizza.ingredients
+    @cart = Cart.new
   end
 
   def new

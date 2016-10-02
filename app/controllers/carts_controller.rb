@@ -6,11 +6,19 @@ class CartsController < ApplicationController
     @pizzas = Pizza.all
   end
 
-  def new
+  def create
+    cart = Cart.new(cart_params)
+    if user_signed_in?
+      cart.user_id = current_user.id
+    end
+    cart.save
+    redirect_to pizzas_path
   end
 
-  def create
+  private
 
+  def cart_params
+    params.require(:cart).permit(:pizza_id)
   end
 
 end
