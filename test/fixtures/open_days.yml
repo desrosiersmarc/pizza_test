@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  opened_hour: 2016-10-07 18:36:36
+  closed_hour: 2016-10-07 18:36:36
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+  food_truck: one
+  day: one
+
+two:
+  opened_hour: 2016-10-07 18:36:36
+  closed_hour: 2016-10-07 18:36:36
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+  food_truck: two
+  day: two
