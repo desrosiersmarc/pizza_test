@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161007163133) do
+ActiveRecord::Schema.define(version: 20161007202434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20161007163133) do
   end
 
   create_table "days", force: :cascade do |t|
-    t.string   "day"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,12 +67,28 @@ ActiveRecord::Schema.define(version: 20161007163133) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "open_days", force: :cascade do |t|
+    t.time     "opened_hour"
+    t.time     "closed_hour"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "food_truck_id"
+    t.integer  "day_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["day_id"], name: "index_open_days_on_day_id", using: :btree
+    t.index ["food_truck_id"], name: "index_open_days_on_food_truck_id", using: :btree
+  end
+
   create_table "pizzas", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "food_truck_id"
+    t.index ["food_truck_id"], name: "index_pizzas_on_food_truck_id", using: :btree
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -105,6 +121,9 @@ ActiveRecord::Schema.define(version: 20161007163133) do
   add_foreign_key "carts", "pizzas"
   add_foreign_key "carts", "users"
   add_foreign_key "food_trucks", "categories"
+  add_foreign_key "open_days", "days"
+  add_foreign_key "open_days", "food_trucks"
+  add_foreign_key "pizzas", "food_trucks"
   add_foreign_key "recipes", "ingredients"
   add_foreign_key "recipes", "pizzas"
 end
