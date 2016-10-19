@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :ingredients, only: [:index, :show]
   end
   resources :carts
-
+  resources :food_trucks
 end
