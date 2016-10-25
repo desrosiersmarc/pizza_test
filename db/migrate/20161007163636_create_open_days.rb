@@ -1,8 +1,8 @@
 class CreateOpenDays < ActiveRecord::Migration[5.0]
   def change
     create_table :open_days do |t|
-      t.time :opened_hour
-      t.time :closed_hour
+      t.datetime :opened_hour
+      t.datetime :closed_hour
       t.string :address
       t.float :latitude
       t.float :longitude
