@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 20161007202434) do
   end
 
   create_table "open_days", force: :cascade do |t|
-    t.time     "opened_hour"
-    t.time     "closed_hour"
+    t.datetime "opened_hour"
+    t.datetime "closed_hour"
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"

@@ -1,4 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-
+<div class="foodtruck-background" style="background-image: url(<%=helper_picture_background()%>);">
+  <div class="home-elements">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 home-punchline">
+          <h2>Trouver un foodtruck...</h2>
+        </div>
+        <%= simple_form_for :search, url: food_trucks_path, method: :get do |f| %>
+            <div class="col-xs-9">
+              <%= f.input :city, label: false, placeholder: 'Où ?' %>
+            </div>
+            <div class="col-xs-2">
+              <%= f.button :submit, 'Go' %>
+            </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

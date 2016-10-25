@@ -14,6 +14,7 @@ Ingredient.destroy_all
 Recipe.destroy_all
 User.destroy_all
 Cart.destroy_all
+Day.destroy_all
 
 puts 'Add ingredients'
 
@@ -41,11 +42,11 @@ print 'Add pizzas : '
                 name: Faker::Superhero.name,
                 price: rand(5..12),
                 description: Faker::Lorem.sentence(3))
-  urls = [
-    'https://unsplash.it/200',
-    'https://unsplash.it/300'
-  ]
-  pizza.photos = urls.map { |url| open(url)}
+  # urls = [
+  #   'https://unsplash.it/200',
+  #   'https://unsplash.it/300'
+  # ]
+  # pizza.photos = urls.map { |url| open(url)}
   pizza.save
   print '*'
 end
@@ -57,9 +58,29 @@ Pizza.all.each do |pizza|
     Recipe.create(pizza_id: pizza.id, ingredient_id: Ingredient.all.sample.id)
     print '*'
   end
-
-
 end
+
+puts ''
+print 'Add days : '
+
+days = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche']
+days.each do |day|
+  Day.create(name: day)
+  print '*'
+end
+
+puts ''
+print 'Add Opened, closed and address'
+
+puts ''
+print 'Create foodtrucks'
+10.times do
+  FoodTruck.create(name: Faker::Space.planet)
+  # ,address: (Faker::Address.street_address + ' ' + Faker::Address.zip_code + ' ' + Faker::Address.city)
+  print '*'
+end
+
+
 puts ''
 puts '------------------'
 puts 'END'
