@@ -2,9 +2,9 @@ class FoodTrucksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :new]
 
   def index
-    # @city = params[:search][:city]
+    @city = params[:search][:city]
     @food_trucks = FoodTruck.all
-    @open_days = OpenDay.all
+    @open_days = OpenDay.near(@city, 10)
   end
 
   def new
@@ -14,4 +14,6 @@ class FoodTrucksController < ApplicationController
   def create
 
   end
+
+  private
 end

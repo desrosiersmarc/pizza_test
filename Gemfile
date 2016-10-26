@@ -14,6 +14,7 @@ gem "attachinary", github: "assembler/attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
 gem 'faker'
+gem "geocoder"
 
 gem 'sass-rails'
 gem 'jquery-rails'
