@@ -3,9 +3,13 @@
     Liste des foodtrucks de
     <%= @city %>
   </h4>
-  <% @food_trucks.each do |food_truck| %>
-    <%= link_to food_truck do  %>
-      <p><%= food_truck.name %></p>
+  <% @open_days.each do |open_day| %>
+    <%= link_to FoodTruck.find(open_day.food_truck_id) do  %>
+      <p>
+        <%= open_day.food_truck.name %>
+        |
+        <%= open_day.inspect %>
+      </p>
 
     <% end %>
   <% end %>
