@@ -14,6 +14,7 @@ Ingredient.destroy_all
 Recipe.destroy_all
 User.destroy_all
 Cart.destroy_all
+FoodTruck.destroy_all
 Day.destroy_all
 
 puts 'Add ingredients'
@@ -75,8 +76,7 @@ print 'Add Opened, closed and address'
 puts ''
 print 'Create foodtrucks'
 10.times do
-  FoodTruck.create(name: Faker::Space.planet)
-  # ,address: (Faker::Address.street_address + ' ' + Faker::Address.zip_code + ' ' + Faker::Address.city)
+  FoodTruck.create(name: Faker::Space.planet, phone: Faker::PhoneNumber.fr_cellphone_number)
   print '*'
 end
 
