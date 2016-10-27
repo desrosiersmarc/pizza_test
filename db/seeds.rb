@@ -14,6 +14,8 @@ Ingredient.destroy_all
 Recipe.destroy_all
 User.destroy_all
 Cart.destroy_all
+OpenDay.destroy_all
+FoodTruck.destroy_all
 Day.destroy_all
 
 puts 'Add ingredients'
@@ -69,17 +71,28 @@ days.each do |day|
   print '*'
 end
 
-puts ''
-print 'Add Opened, closed and address'
 
 puts ''
 print 'Create foodtrucks'
-10.times do
-  FoodTruck.create(name: Faker::Space.planet)
-  # ,address: (Faker::Address.street_address + ' ' + Faker::Address.zip_code + ' ' + Faker::Address.city)
+20.times do
+  FoodTruck.create(name: Faker::Space.planet, phone: Faker::PhoneNumber.fr_cellphone_number)
   print '*'
 end
 
+puts ''
+print 'Add Opened, closed and address'
+
+FoodTruck.all.each do |food_truck|
+  puts 'F'
+  Day.all.each do |day|
+    OpenDay.create(opened_hour: '19:15',
+                    closed_hour: '22:15',
+                    address: (Faker::Address.fr_zip_and_city_in_region(1)[0] + ' ' + Faker::Address.fr_zip_and_city_in_region(1)[1]),
+                    food_truck: food_truck,
+                    day: day )
+    print '*'
+  end
+end
 
 puts ''
 puts '------------------'
