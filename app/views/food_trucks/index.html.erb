@@ -1,20 +1,23 @@
 <div class="container">
-  <h4>
-    Liste des foodtrucks de
-    <%= @city %>
-  </h4>
-  <% @open_days.each do |open_day| %>
-    <%= link_to FoodTruck.find(open_day.food_truck_id) do  %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <p>
-          <%= open_day.food_truck.name %>
-          |
-          <%= open_day.address %>
-        </p>
-        <p>
-          <%= open_day.food_truck.phone %>
-        </p>
-      </div>
+    <h4>
+      Liste des foodtrucks de
+      <%= @city %>
+    </h4>
+    <% @open_days.each do |open_day| %>
+      <%= link_to FoodTruck.find(open_day.food_truck_id) do  %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="foodtruck-card">
+            <p>
+              <%= open_day.food_truck.name %>
+              |
+              <%= open_day.address %>
+            </p>
+            <p>
+
+            <a href="tel:<%= open_day.food_truck.phone.gsub(' ', '') %>" class="btn btn-danger">Call <%= open_day.food_truck.phone %></a>
+            </p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
 </div>
