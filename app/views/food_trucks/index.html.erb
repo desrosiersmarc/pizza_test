@@ -14,7 +14,7 @@
             </p>
             <p>
 
-            <a href="tel:<%= open_day.food_truck.phone.gsub(' ', '') %>" class="btn btn-danger">Call <%= open_day.food_truck.phone %></a>
+            <a href="tel:<%= open_day.food_truck.phone.gsub(' ', '') %>" class="btn btn-danger">Call <%= open_day.food_truck.phone.gsub(' ','').scan(/../).join('.') %></a>
             </p>
           </div>
         </div>
