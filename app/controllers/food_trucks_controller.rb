@@ -12,8 +12,17 @@ class FoodTrucksController < ApplicationController
   end
 
   def create
+    @food_truck = FoodTruck.new(params_foodtruck)
+    if @food_truck.save
+      redirect_to root_path, notice: "You create your foodtruck !"
+    else
+      render :new
+    end
 
   end
 
   private
+    def params_foodtruck
+      params.require(:food_truck).permit(:name, :phone, :photo)
+    end
 end
