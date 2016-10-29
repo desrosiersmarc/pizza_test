@@ -12,6 +12,9 @@
               |
               <%= open_day.address %>
             </p>
+            <% if open_day.food_truck.photo? %>
+              <%= cl_image_tag open_day.food_truck.photo.path, width: 300 %>
+            <% end %>
             <p>
 
             <a href="tel:<%= open_day.food_truck.phone.gsub(' ', '') %>" class="btn btn-danger">Call <%= open_day.food_truck.phone.gsub(' ','').scan(/../).join('.') %></a>
