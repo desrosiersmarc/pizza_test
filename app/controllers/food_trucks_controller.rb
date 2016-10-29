@@ -13,6 +13,7 @@ class FoodTrucksController < ApplicationController
 
   def create
     @food_truck = FoodTruck.new(params_foodtruck)
+    @food_truck.user = current_user
     if @food_truck.save
       redirect_to root_path, notice: "You create your foodtruck !"
     else
