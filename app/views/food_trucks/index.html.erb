@@ -6,18 +6,22 @@
     <% @open_days.each do |open_day| %>
       <%= link_to FoodTruck.find(open_day.food_truck_id) do  %>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="foodtruck-card">
+          <div class="foodtruck-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= helper_picture_url(open_day.food_truck)%>">
             <p>
               <%= open_day.food_truck.name %>
-              |
+            </p>
+            <p>
               <%= open_day.address %>
             </p>
-            <% if open_day.food_truck.photo? %>
-              <%= cl_image_tag open_day.food_truck.photo.path, width: 300 %>
-            <% end %>
             <p>
-
-            <a href="tel:<%= open_day.food_truck.phone.gsub(' ', '') %>" class="btn btn-danger">Call <%= open_day.food_truck.phone.gsub(' ','').scan(/../).join('.') %></a>
+              <%= open_day.opened_hour.strftime("%H:%M")%> | <%=open_day.closed_hour.strftime("%H:%M") %>
+            </p>
+            <p>
+              <% if !open_day.food_truck.category.nil? %>
+                <%= open_day.food_truck.category.name %>
+              <% end %>
+              <a href="tel:<%= open_day.food_truck.phone.gsub(' ', '') %>" class="btn btn-danger"><i class="fa fa-mobile" aria-hidden="true"></i>
+ <%= open_day.food_truck.phone.gsub(' ','').scan(/../).join('.') %></a>
             </p>
           </div>
         </div>
