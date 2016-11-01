@@ -4,7 +4,8 @@ class FoodTrucksController < ApplicationController
   def index
     @city = params[:search][:city]
     @food_trucks = FoodTruck.all
-    @open_days = OpenDay.near(@city, 200)
+    @open_days = OpenDay.where("day_id = ?", Day.find_by_day_of_week(Time.now.strftime("%w")).id)
+                        .near(@city, 200)
   end
 
   def new

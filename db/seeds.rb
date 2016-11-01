@@ -12,10 +12,10 @@ puts 'destroy all data'
 Pizza.destroy_all
 Ingredient.destroy_all
 Recipe.destroy_all
-User.destroy_all
 Cart.destroy_all
 OpenDay.destroy_all
 FoodTruck.destroy_all
+User.destroy_all
 Day.destroy_all
 
 puts 'Add ingredients'
@@ -66,8 +66,10 @@ puts ''
 print 'Add days : '
 
 days = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche']
+i = 0
 days.each do |day|
-  Day.create(name: day)
+  i+=1
+  Day.create(name: day, day_of_week: i)
   print '*'
 end
 

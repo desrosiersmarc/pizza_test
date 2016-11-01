@@ -1,24 +1,29 @@
 <div class="container">
     <h4>
-      Liste des foodtrucks de
+      Liste des foodtrucks autour de
       <%= @city %>
     </h4>
     <% @open_days.each do |open_day| %>
       <%= link_to FoodTruck.find(open_day.food_truck_id) do  %>
         <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="foodtruck-card">
-            <p>
+          <div class="foodtruck-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= helper_picture_url(open_day.food_truck)%>">
+            <p class="foodtruck-card-name">
               <%= open_day.food_truck.name %>
-              |
+            </p>
+            <p class="foodtruck-card-open"> <%= open_day.open_now? ? "Open" : "Close" %></p>
+            <p class="foodtruck-card-address">
               <%= open_day.address %>
             </p>
-            <% if open_day.food_truck.photo? %>
-              <%= cl_image_tag open_day.food_truck.photo.path, width: 300 %>
-            <% end %>
-            <p>
-
-            <a href="tel:<%= open_day.food_truck.phone.gsub(' ', '') %>" class="btn btn-danger">Call <%= open_day.food_truck.phone.gsub(' ','').scan(/../).join('.') %></a>
+            <p class="food_truck-card-hour">
+              <%= open_day.time_opened_hour%> | <%=open_day.time_closed_hour %>
             </p>
+            <p class="food_truck-card-category">
+              <% if !open_day.food_truck.category.nil? %>
+                <%= open_day.food_truck.category.name %>
+              <% end %>
+            </p>
+              <a href="tel:<%= open_day.food_truck.phone.gsub(' ', '') %>" class="btn btn-danger food_truck-card-phone"><i class="fa fa-mobile" aria-hidden="true"></i>
+ <%= open_day.food_truck.phone.gsub(' ','').scan(/../).join('.') %></a>
           </div>
         </div>
       <% end %>
