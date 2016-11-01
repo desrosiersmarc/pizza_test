@@ -4,4 +4,16 @@ class OpenDay < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+
+  def time_opened_hour
+    self.opened_hour.strftime("%H:%M")
+  end
+
+  def time_closed_hour
+    self.closed_hour.strftime("%H:%M")
+  end
+
+  def open_now?
+    time_opened_hour < Time.now.strftime("%R") && time_closed_hour > Time.now.strftime("%R")
+  end
 end
