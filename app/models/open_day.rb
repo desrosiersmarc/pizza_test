@@ -16,4 +16,9 @@ class OpenDay < ApplicationRecord
   def open_now?
     time_opened_hour < Time.now.strftime("%R") && time_closed_hour > Time.now.strftime("%R")
   end
+
+  def name_of_day
+    Day.find(self.day_id).name
+  end
+
 end

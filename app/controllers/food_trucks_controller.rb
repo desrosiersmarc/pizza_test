@@ -1,11 +1,15 @@
 class FoodTrucksController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :new]
+  skip_before_action :authenticate_user!, only: [:index, :new, :show]
 
   def index
     @city = params[:search][:city]
     @food_trucks = FoodTruck.all
     @open_days = OpenDay.where("day_id = ?", Day.find_by_day_of_week(Time.now.strftime("%w")).id)
                         .near(@city, 200)
+  end
+
+  def show
+    @food_truck = FoodTruck.find(params[:id])
   end
 
   def new
