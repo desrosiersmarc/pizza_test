@@ -77,7 +77,7 @@ end
 puts ''
 print 'Create foodtrucks'
 20.times do
-  FoodTruck.create(name: Faker::Space.planet, phone: Faker::PhoneNumber.fr_cellphone_number)
+  FoodTruck.create(name: Faker::Space.planet, phone: '0662262352')
   print '*'
 end
 

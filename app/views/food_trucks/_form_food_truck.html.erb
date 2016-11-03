@@ -1,0 +1,6 @@
+  <%= simple_form_for @food_truck do |f| %>
+    <%= f.input :name, error: 'Le nom du Foodtruck est obligatoire', label: 'Nom du foodtruck' %>
+    <%= f.input :phone, placeholder: 'Par exemple : 0607080910', label: 'Téléphone portable', error: 'Le numéro de poratble est obligatoire' %>
+    <%= f.input :photo, as: :attachinary, label: 'Photo du Foodtruck', error: 'La photo est obligatoire' %>
+    <%= f.button :submit, 'Enregitrez', class: "btn btn-danger btn-block" %>
+  <%end%>
