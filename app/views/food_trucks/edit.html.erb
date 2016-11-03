@@ -1,1 +1,15 @@
-<h2>Here we can update a foodtruck</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Here we can update a foodtruck</h2>
+      <%= render 'form_food_truck' %>
+      <br>
+      <p class='btn btn-success btn-block'>Add an open day</p>
+      <% @food_truck.open_days.each do |open_day| %>
+        <%= render 'card_open_day', {open_day: open_day} %>
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      <% end %>
+
+    </div>
+  </div>
+</div>

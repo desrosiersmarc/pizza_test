@@ -24,7 +24,10 @@ class FoodTrucksController < ApplicationController
     else
       render :new
     end
+  end
 
+  def edit
+    @food_truck = FoodTruck.find(params[:id])
   end
 
   private
