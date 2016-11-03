@@ -3,7 +3,7 @@
     <div class="col-xs-12">
       <%= simple_form_for @food_truck do |f| %>
         <%= f.input :name %>
-        <%= f.input :phone %>
+        <%= f.input :phone, placeholder: 'Par exemple : 0607080910' %>
         <%= f.input :photo, as: :attachinary %>
         <%= f.button :submit, 'Enregitrez', class: "btn btn-danger btn-block" %>
       <% end %>
