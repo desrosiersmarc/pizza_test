@@ -3,14 +3,12 @@ class FoodTrucksController < ApplicationController
 
   def index
     @city = params[:search][:city]
-    @opendays = OpenDay.includes(food_truck:[:category]).near(@city, 200)
+    @open_days = OpenDay.includes(food_truck:[:category]).near(@city, 200)
                     .where(open_days: {day_id: Day.find_by_day_of_week(Time.now.strftime("%w")).id })
-
-
   end
 
   def show
-    @food_truck = FoodTruck.find(params[:id])
+    @food_truck = FoodTruck.includes(:open_days).find(params[:id])
   end
 
   def new
