@@ -65,11 +65,11 @@ end
 puts ''
 print 'Add days : '
 
-days = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche']
+days = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi']
 i = 0
 days.each do |day|
-  i+=1
   Day.create(name: day, day_of_week: i)
+  i+=1
   print '*'
 end
 

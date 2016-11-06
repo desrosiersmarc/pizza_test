@@ -6,8 +6,8 @@ class FoodTruck < ApplicationRecord
   has_attachment :photo
 
   validates :name, presence: true
-  validates :phone, presence: true, numericality: true
-  validates :photo, presence: true
+  validates :phone, presence: true #, numericality: true
+  #validates :photo, presence: true
 
   def open_today?
     !self.open_days.find_by_day_id(Day.find_by_day_of_week(Time.now.strftime("%w")).id).nil?
