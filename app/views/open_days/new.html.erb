@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+    <h2>New open_day for <%= @food_truck.name %> | <%= @food_truck.id %></h2>
+
+
+      <%= simple_form_for [@food_truck, @open_day] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :opened_hour %>
+        <%= f.input :closed_hour %>
+        <%= f.input :address %>
+        <%= f.input :day_id, collection: @days %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

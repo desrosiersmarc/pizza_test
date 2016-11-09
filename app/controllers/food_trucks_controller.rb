@@ -3,13 +3,16 @@ class FoodTrucksController < ApplicationController
 
   def index
     @city = params[:search][:city]
-    open_days = OpenDay.where(open_days: {day_id: Day.find_by_day_of_week(Time.now.strftime("%w")).id })
+
+    @open_day = Day.find_by_day_of_week(Time.now.strftime("%w")).id
+    @open_days = OpenDay.where(open_days: {day_id:@open_day})
                         .near(@city, 200)
                         .map{|o| o.food_truck_id}
-    @food_trucks = FoodTruck.where("id IN (?)", open_days)
+    @food_trucks = FoodTruck.where("id IN (?)", @open_days)
                             .includes(:category, :open_days)
     #TODO replace .map by .pluck(:foodtruck_id)
     #TODO find a solution for multi-opened hour in the same zone and the same day
+    #TODO can select only :open_days for today
   end
 
   def show
