@@ -6,10 +6,10 @@
       </h2>
       <%= helper_picture_tag(@food_truck) %>
     </div>
-    <div class="col-xs-12">
+    <div class="col-xs-12 add-padding-top add-padding-bottom">
       <a href="" class="btn btn-primary btn-block">Call 06.06.06.06.06</a>
     </div>
-    <div class="col-xs-12">
+    <div class="col-xs-12 add-padding-bottom">
       <%= link_to 'Create a new day', new_food_truck_open_day_path(@food_truck), class: "btn btn-success btn-block" %>
     </div>
     <% @open_days.each do |open_day| %>
@@ -20,6 +20,8 @@
             <%= open_day.time_opened_hour %>
             |
             <%=open_day.time_closed_hour%>
+            |
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
           </p>
           <p>
             <%= open_day.address %>

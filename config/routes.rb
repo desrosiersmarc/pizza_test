@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   end
   resources :carts
   resources :food_trucks, only: [:index, :new, :create] do
-    resources :open_days, only: [:index, :new, :create]
+    resources :open_days, only: [:index, :new, :create, :destroy]
   end
 end

@@ -10,6 +10,8 @@ class OpenDaysController < ApplicationController
   def new
     @open_day = OpenDay.new
     @days = Day.all
+    @times = @open_day.times_list
+
   end
 
   def create
