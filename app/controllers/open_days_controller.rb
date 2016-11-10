@@ -3,7 +3,8 @@ class OpenDaysController < ApplicationController
   before_action :find_food_truck, only: [:new, :create]
 
   def index
-    @open_days = FoodTruck.find(params[:food_truck_id]).open_days
+    @food_truck = FoodTruck.find(params[:food_truck_id])
+    @open_days = @food_truck.open_days
   end
 
   def new

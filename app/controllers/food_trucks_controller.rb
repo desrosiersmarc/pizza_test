@@ -27,7 +27,7 @@ class FoodTrucksController < ApplicationController
     @food_truck = FoodTruck.new(params_foodtruck)
     @food_truck.user = current_user
     if @food_truck.save
-      redirect_to root_path, notice: "You create your foodtruck !"
+      redirect_to new_food_truck_open_day_path(@food_truck), notice: "You create your foodtruck !"
     else
       render :new
     end
