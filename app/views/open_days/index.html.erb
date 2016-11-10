@@ -7,14 +7,14 @@
       <%= helper_picture_tag(@food_truck) %>
     </div>
     <div class="col-xs-12 add-padding-top add-padding-bottom">
-      <a href="" class="btn btn-primary btn-block">Call 06.06.06.06.06</a>
+      <a href="" class="btn btn-danger btn-block">Call 06.06.06.06.06</a>
     </div>
     <div class="col-xs-12 add-padding-bottom">
-      <%= link_to 'Create a new day', new_food_truck_open_day_path(@food_truck), class: "btn btn-success btn-block" %>
+      <%= link_to 'Create a new day', new_food_truck_open_day_path(@food_truck), class: "btn btn-danger btn-block" %>
     </div>
     <% @open_days.each do |open_day| %>
-      <div class="col-xs-12 col-sm-6">
-        <div class="btn btn-danger btn-large foodtruck-days-informations">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="btn btn-warning btn-large foodtruck-days-informations">
           <p>
             <%= open_day.name_of_day %>
             <%= open_day.time_opened_hour %>

@@ -11,7 +11,13 @@
             <p class="foodtruck-card-name">
               <%= food_truck.name %>
             </p>
-            <p class="foodtruck-card-open"> <%= food_truck.open_days.first.open_now? ? "Open" : "Close" %></p>
+
+            <% if food_truck.open_days.first.open_now? %>
+              <p class="foodtruck-card-open">Ouvert</p>
+            <% else %>
+              <p class="foodtruck-card-close">Fermé</p>
+            <% end %>
+
             <p class="foodtruck-card-address">
               <%= food_truck.open_days.first.address %>
             </p>
