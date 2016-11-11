@@ -4,7 +4,8 @@
       <h2>
         <%= @food_truck.name %>
       </h2>
-      <%= helper_picture_tag(@food_truck) %>
+      <div class="foodtruck-picture" style="background-image: url(<%= helper_picture_url(@food_truck) %>);">
+      </div>
     </div>
     <div class="col-xs-12 add-padding-top add-padding-bottom">
       <a href="" class="btn btn-danger btn-block">Call 06.06.06.06.06</a>
