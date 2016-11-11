@@ -21,4 +21,18 @@ class OpenDay < ApplicationRecord
     Day.find(self.day_id).name
   end
 
+  def times_list
+    @times=[]
+    hour_time = 0
+    min_time = ['00', '15', '30', '45']
+    24.times do
+      min_time_count = 0
+      4.times do
+        @times << (hour_time.to_s + ':' + min_time[min_time_count])
+        min_time_count+=1
+      end
+      hour_time+=1
+    end
+    @times
+  end
 end
