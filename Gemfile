@@ -16,6 +16,8 @@ gem "coffee-rails"
 gem 'faker'
 gem 'faker_extension_fr'
 gem "geocoder"
+gem "rails-i18n", '~> 5.0.0'
+gem 'devise-i18n'
 
 gem 'sass-rails'
 gem 'jquery-rails'

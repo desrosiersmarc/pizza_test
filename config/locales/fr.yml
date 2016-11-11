@@ -1,0 +1,7 @@
+fr:
+  pages:
+    home:
+      find_a_foodtruck: 'Trouver un foodtruck'
+      note_a_town: 'Saisissez une ville ou un code postal'
+      search: 'Chercher'
+      call_me: 'Appelez moi pour une information'

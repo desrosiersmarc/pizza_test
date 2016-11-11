@@ -3,19 +3,19 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 home-punchline">
-          <h2>Trouver un foodtruck...</h2>
+          <h2><%= t('.find_a_foodtruck') %></h2>
         </div>
         <%= simple_form_for :search, url: food_trucks_path, method: :get do |f| %>
             <div class="col-xs-8">
-              <%= f.input :city, label: false, placeholder: 'Saisissez la ville' %>
+              <%= f.input :city, label: false, placeholder: t('.note_a_town') %>
             </div>
             <div class="col-xs-4">
-              <%= f.button :submit, 'Chercher', class: 'btn btn-danger' %>
+              <%= f.button :submit, t('.search'), class: 'btn btn-danger' %>
             </div>
         <%end%>
       </div>
       <div class="col-xs-12 text-center">
-        <a href="tel:0662262352" class="btn btn-success btn-large">Une information ? Appelez moi!</a>
+        <a href="tel:0662262352" class="btn btn-success btn-large"><%= t('.call_me') %></a>
       </div>
     </div>
   </div>
