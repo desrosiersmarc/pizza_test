@@ -4,7 +4,7 @@ class OpenDaysController < ApplicationController
 
   def index
     @food_truck = FoodTruck.find(params[:food_truck_id])
-    @open_days = @food_truck.open_days
+    @open_days = @food_truck.open_days.order(:day_id)
   end
 
   def new
