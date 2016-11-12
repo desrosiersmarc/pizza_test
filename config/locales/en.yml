@@ -26,3 +26,8 @@ en:
       note_a_town: 'Note a town or a zip code'
       search: 'search'
       call_me: 'Information ? Call me'
+  food_trucks:
+    list_of: 'List of'
+    around: ' foodtrucks around of'
+    open: 'Open'
+    close: 'Close'

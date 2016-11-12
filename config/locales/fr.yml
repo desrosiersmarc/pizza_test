@@ -5,3 +5,31 @@ fr:
       note_a_town: 'Saisissez une ville ou un code postal'
       search: 'Chercher'
       call_me: 'Appelez moi pour une information'
+  food_trucks:
+    index:
+      list_of: 'List des'
+      around: 'foodtrucks autour de'
+      open: 'Ouvert'
+      close: 'Fermé'
+    edit:
+    new:
+    form_food_truck:
+      name_error: 'Le nom du Foodtruck est obligatoire'
+      foodtruck_name: 'Nom du foodtruck'
+      phone_error: 'Le numéro de portable est obligatoire'
+      placeholder_phone: '0662262352'
+      foodtruck_phone: 'Téléphone portable'
+      photo_error: 'La photo est obligatoire'
+      foodtruck_photo: 'Photo du Foodtruck'
+      foodtruck_save: 'Enregistrez-vous'
+    show:
+  open_days:
+    index:
+      call: 'Appelez'
+  shared:
+      navbar:
+        add_a_foodtruck: 'Ajoutez un foodtruck'
+        profile: 'Compte'
+        home: 'Home'
+        sign_out: 'Déconnexion'
+        sign_in: 'Connexion'

@@ -11,7 +11,7 @@
         </li>
         <li>
           <%= link_to new_food_truck_path do %>
-            <p>Add a foodtruck</p>
+            <p><%= t('.add_a_foodtruck') %></p>
           <% end %>
         </li>
       </ul>
@@ -42,7 +42,7 @@
             </li>
             <li>
               <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+                <i class="fa fa-home"></i>  <%= t(".home", default: "Home") %>
               <% end %>
             </li>
             <li>
@@ -55,7 +55,9 @@
       </div>
     <% else %>
       <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+        <i class="fa fa-user" aria-hidden="true"></i>
+      <% end %>
     <% end %>
   </div>
 

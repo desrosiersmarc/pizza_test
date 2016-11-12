@@ -1,6 +1,6 @@
 <div class="container">
     <h4>
-      Liste des <%= @open_days.count %> foodtrucks autour de
+      <%= t('.list_of') %> <%= @open_days.count %> <%= t('.around') %>
       <%= @city %>
     </h4>
 
@@ -9,13 +9,13 @@
         <%= link_to food_truck_open_days_path(food_truck) do %>
           <div class="foodtruck-card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= helper_picture_url(food_truck)%>">
             <p class="foodtruck-card-name">
-              <%= food_truck.name %>
+              <%= food_truck.name %> | <%= food_truck.id %>
             </p>
 
             <% if food_truck.open_days.first.open_now? %>
-              <p class="foodtruck-card-open">Ouvert</p>
+              <p class="foodtruck-card-open"><%= t('.open') %></p>
             <% else %>
-              <p class="foodtruck-card-close">Fermé</p>
+              <p class="foodtruck-card-close"><%= t('.close') %></p>
             <% end %>
 
             <p class="foodtruck-card-address">
