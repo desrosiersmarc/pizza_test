@@ -27,7 +27,30 @@ en:
       search: 'search'
       call_me: 'Information ? Call me'
   food_trucks:
-    list_of: 'List of'
-    around: ' foodtrucks around of'
-    open: 'Open'
-    close: 'Close'
+    index:
+      list_of: 'List of'
+      around: 'foodtrucks around'
+      open: 'Opened'
+      close: 'Closed'
+    edit:
+    new:
+    form_food_truck:
+      name_error: "Foodtruck's name is necessary"
+      foodtruck_name: "Foodtruck's name"
+      phone_error: "Foodtruck's phone is necessary"
+      placeholder_phone: '0662262352'
+      foodtruck_phone: "Mobile phone"
+      photo_error: "Foodtruck's picture is necessary"
+      foodtruck_photo: "Foodtruck's picture"
+      foodtruck_save: 'Save'
+    show:
+  open_days:
+    index:
+      call: 'Call'
+  shared:
+      navbar:
+        add_a_foodtruck: 'Add a foodtruck'
+        profile: 'Profile'
+        home: 'Home'
+        sign_out: 'Quit'
+        sign_in: 'Connexion'

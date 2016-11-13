@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   mount Attachinary::Engine => "/attachinary"
 
-  scope '(:locale)', locale: /fr|en/ do
+  scope '(:locale)', locale: /en/ do
     root to: 'pages#home'
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     resources :pizzas, only: [:index, :new, :create] do
