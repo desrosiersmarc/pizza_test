@@ -7,7 +7,7 @@ fr:
       call_me: 'Appelez moi pour une information'
   food_trucks:
     index:
-      list_of: 'List des'
+      list_of: 'Liste des'
       around: 'foodtrucks autour de'
       open: 'Ouvert'
       close: 'Fermé'
