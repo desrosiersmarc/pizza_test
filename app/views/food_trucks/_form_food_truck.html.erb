@@ -1,5 +1,6 @@
   <%= simple_form_for @food_truck do |f| %>
-    <%= f.input :name, error: t('.name_error'), label: t('.foodtruck_name') %>
+    <%= f.input :siren, input_html: {value: @company['company']['siren']} %>
+    <%= f.input :name, error: t('.name_error'), label: t('.foodtruck_name'), input_html: {value: @company['company']['names']['denomination']} %>
     <%= f.input :phone, placeholder: t('.placeholder_phone'), label: t('.foodtruck_phone'), error: t('.phone_error') %>
     <%= f.input :photo, as: :attachinary, label: t('.foodtruck_photo'), error: t('.photo_error') %>
     <%= f.button :submit, t('.foodtruck_save'), class: "btn btn-danger btn-block" %>

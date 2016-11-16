@@ -5,6 +5,10 @@ fr:
       note_a_town: 'Saisissez une ville ou un code postal'
       search: 'Chercher'
       call_me: 'Appelez moi pour une information'
+    registration:
+      registration_title: 'Enregistrement de votre Foodtruck'
+      registration_explanation: 'Saisissez votre numéro SIREN'
+      save: "Passez à l'étape suivante"
   food_trucks:
     index:
       list_of: 'Liste des'
@@ -26,6 +30,15 @@ fr:
   open_days:
     index:
       call: 'Appelez'
+      create_openday_ok: "Créneau horaire bien ajouté"
+      create_openday: 'Ajouter un créneau horaire'
+    new:
+      new_open_day: "Ajoutez un créneau d'ouverture-"
+      day: "Choisissez le jour d'ouverture"
+      opened_hour: "Horaire d'ouverture"
+      closed_hour: "Horaire de fermeture"
+      address: "Emplacement d'ouverture"
+      save: 'Ajouter'
   shared:
       navbar:
         add_a_foodtruck: 'Ajoutez un foodtruck'

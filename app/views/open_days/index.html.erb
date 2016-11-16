@@ -11,29 +11,27 @@
       <a href="" class="btn btn-danger btn-block"><%= t('.call') %> 06.06.06.06.06</a>
     </div>
     <div class="col-xs-12 add-padding-bottom">
-      <%= link_to 'Create a new day', new_food_truck_open_day_path(@food_truck), class: "btn btn-danger btn-block" %>
+      <%= link_to t('.create_openday'), new_food_truck_open_day_path(@food_truck), class: "btn btn-danger btn-block" %>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="btn btn-warning btn-large foodtruck-days-informations">
         <% @open_days.each do |open_day| %>
-          <div class="open-day-div">
-            <p>
-              <%= open_day.name_of_day %>
-              <%= open_day.time_opened_hour %>
-              |
-              <%=open_day.time_closed_hour%>
-              |
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
-            </p>
-            <p>
-              <%= open_day.address %>
-            </p>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="open-day-div">
+              <p>
+                <%= open_day.name_of_day %>
+                <%= open_day.time_opened_hour %>
+                |
+                <%=open_day.time_closed_hour%>
+                |
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              </p>
+              <p>
+                <%= open_day.address %>
+              </p>
+            </div>
+            <hr>
           </div>
-          <hr>
         <% end %>
       </div>
-    </div>
-
-
   </div>
 </div>
