@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <h2>Company page</h2>
+
+    <p>Siren :<%= @company['company']['siren'] %></p>
+    <p><%= @company['company']['legal_form'] %> <%= @company['company']['names']['denomination'] %></p>
+    <p><%= @company['company']['address'] %></p>
+    <p><%= @company['company']['postal_code'] %> <%= @company['company']['city'] %></p>
+    <p><%= @company['company']['vat_number'] %></p>
+    <p><%= @company['company']['capital'] %>€</p>
+    <p><%= @company['company']['administration'] %></p>
+    <p><%= @company['company']['activity'] %></p>
+  </div>
+</div>

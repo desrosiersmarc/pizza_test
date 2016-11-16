@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-    <h2>New open_day for <%= @food_truck.name %> | <%= @food_truck.id %></h2>
+    <h2><%= t('.new_open_day') %><%= @food_truck.name %> | <%= @food_truck.id %></h2>
       <%= simple_form_for [@food_truck, @open_day] do |f| %>
         <%= f.error_notification %>
-        <%= f.input :opened_hour, collection: @times %>
-        <%= f.input :closed_hour , collection: @times %>
-        <%= f.input :address %>
-        <%= f.input :day_id, collection: @days %>
-        <%= f.button :submit %>
+        <%= f.input :day_id, collection: @days, label: t('.day') %>
+        <%= f.input :opened_hour, collection: @times, label: t('.opened_hour') %>
+        <%= f.input :closed_hour , collection: @times, label: t('.closed_hour') %>
+        <%= f.input :address, label: t('.address') %>
+        <%= f.button :submit, t('.save'), class: 'btn btn-danger btn-block' %>
       <% end %>
     </div>
   </div>

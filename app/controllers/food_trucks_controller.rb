@@ -21,6 +21,13 @@ class FoodTrucksController < ApplicationController
 
   def new
     @food_truck = FoodTruck.new
+    siren = params['search']['siren']
+    url = 'https://firmapi.com/api/v1/companies/' + siren
+    company_serialized = open(url).read
+    @company = JSON.parse(company_serialized)
+    if @company.nil?
+      @company=0
+    end
   end
 
   def create

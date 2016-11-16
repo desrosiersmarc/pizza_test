@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h4><%= t('.registration_title') %></h4>
+        <%= simple_form_for :search, url: new_food_truck_path, method: 'get' do |f| %>
+          <%= f.input :siren, label: t('.registration_explanation') %>
+        <%= f.button :submit, t('.save'), class: 'btn btn-danger btn-block' %>
+      <% end %>
+    </div>
+  </div>
+</div>
