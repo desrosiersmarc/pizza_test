@@ -2,8 +2,8 @@
     <h4>
       <%= t('.list_of') %> <%= @open_days.count %> <%= t('.around') %>
       <%= @city %>
+      OpenDay : <%= @open_day  %> | OpenDays : <%= @open_days %>
     </h4>
-    OpenDay : <%= @open_day  %> | OpenDays : <%= @open_days %>
     <% @food_trucks.each do |food_truck| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <%= link_to food_truck_open_days_path(food_truck) do %>
