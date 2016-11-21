@@ -1,0 +1,7 @@
+<h2>My Foodtruck to update</h2>
+
+<% @foodtrucks.each do |foodtruck| %>
+  <%= link_to edit_food_truck_path(foodtruck) do %>
+    <p><%= foodtruck.name %> | <%= foodtruck.id %></p>
+  <% end %>
+<% end %>
