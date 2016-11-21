@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
     resources :pages, only: [:index, :show]
     resources :carts
-    resources :food_trucks, only: [:index, :new, :create] do
+    resources :food_trucks, only: [:index, :new, :create, :edit] do
       resources :open_days, only: [:index, :new, :create, :destroy]
     end
   end

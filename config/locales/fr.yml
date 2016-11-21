@@ -43,7 +43,7 @@ fr:
       navbar:
         add_a_foodtruck: 'Ajoutez un foodtruck'
         profile: 'Compte'
-        home: 'Home'
+        home: 'Accueil'
         my_foodtruck: 'Mon foodtruck'
         sign_out: 'Déconnexion'
         sign_in: 'Connexion'
