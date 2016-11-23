@@ -6,6 +6,7 @@
         <%= f.error_notification %>
         <%= f.input :day_id, collection: @days, label: t('.day') %>
         <%= f.input :opened_hour, collection: @times, label: t('.opened_hour') %>
+        <!-- TODO selet 19:00 by default for opened and 22:00 for closed -->
         <%= f.input :closed_hour , collection: @times, label: t('.closed_hour') %>
         <%= f.input :address, label: t('.address') %>
         <%= f.button :submit, t('.save'), class: 'btn btn-danger btn-block' %>
