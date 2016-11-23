@@ -11,25 +11,21 @@
       <a href="<%= 'tel:' + @food_truck.phone %>" class="btn btn-danger btn-block"><%= t('.call') %> <%= @food_truck.phone %></a>
       <!-- TODO replace call by a fontawesome.io phone -->
     </div>
-    <div class="btn btn-warning btn-large foodtruck-days-informations">
-      <% @open_days.each do |open_day| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="open-day-div">
-            <p>
-              <%= open_day.name_of_day %>
-              <%= open_day.time_opened_hour %>
-              |
-              <%=open_day.time_closed_hour%>
-              |
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
-            </p>
-            <p>
-              <%= open_day.address %>
-            </p>
-          </div>
-          <hr>
-        </div>
-      <% end %>
-    </div>
   </div>
+    <% @open_days.each do |open_day| %>
+      <div class="col-xs-12 col-sm-6 open-day-card-color">
+        <div class="open-day-div">
+          <p>
+            <%= open_day.name_of_day %>
+            <%= open_day.time_opened_hour %>
+            |
+            <%=open_day.time_closed_hour%>
+          </p>
+          <p>
+            <%= open_day.address %>
+          </p>
+        </div>
+        <hr>
+      </div>
+    <% end %>
 </div>

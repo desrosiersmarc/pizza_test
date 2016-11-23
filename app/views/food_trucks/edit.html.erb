@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h2>Here we can update a foodtruck</h2>
+      <h2><%= t('.edit_foodtruck_title') %></h2>
         <%= simple_form_for @food_truck, url: edit_food_truck_path(@food_truck) do |f| %>
           <!-- TODO solve the probleme with the slightly non standard route -->
           <%= f.input :siren %>
