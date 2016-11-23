@@ -1,15 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h2>Here we can update a foodtruck</h2>
-      <%= render 'form_food_truck' %>
+      <h2><%= t('.edit_foodtruck_title') %></h2>
+        <%= simple_form_for @food_truck, url: edit_food_truck_path(@food_truck) do |f| %>
+          <!-- TODO solve the probleme with the slightly non standard route -->
+          <%= f.input :siren %>
+          <%= f.input :name, error: t('.name_error'), label: t('.foodtruck_name') %>
+          <%= f.input :phone, placeholder: t('.placeholder_phone'), label: t('.foodtruck_phone'), error: t('.phone_error') %>
+          <%= f.input :photo, as: :attachinary, label: t('.foodtruck_photo'), error: t('.photo_error') %>
+          <%= f.button :submit, t('.foodtruck_save'), class: "btn btn-danger btn-block" %>
+        <%end%>
       <br>
       <p class='btn btn-success btn-block'>Add an open day</p>
       <% @food_truck.open_days.each do |open_day| %>
         <%= render 'card_open_day', {open_day: open_day} %>
         <i class="fa fa-trash" aria-hidden="true"></i>
       <% end %>
-
     </div>
   </div>
 </div>

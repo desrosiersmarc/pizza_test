@@ -21,7 +21,7 @@
 
 /* Navbar logo */
 .navbar-wagon-brand img {
-  width: 125px;
+  width: 90px;
 }
 
 /* Navbar right section (with form, links, button) */
@@ -124,13 +124,13 @@
   background: transparent !important;
   color: black !important;
 }
-.navbar-wagon-dropdown-menu:before {
+.navbar-wagon-dropdown-menu-right:before {
   content: ' ';
   height: 10px;
   width: 10px;
   position: absolute;
-  right: 135px;
-  top: -6px;
+  right: 10px;
+  top: -5px;
   background-color: white;
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
@@ -142,8 +142,8 @@
   height: 10px;
   width: 10px;
   position: absolute;
-  right: 10px;
-  top: -6px;
+  right: 195px;
+  top: -5px;
   background-color: white;
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
@@ -153,4 +153,8 @@
 .dropdown i {
   color: #FFF;
   font-size: 24px;
+}
+
+.dropdown-menu i {
+  color: red;
 }

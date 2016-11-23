@@ -16,6 +16,12 @@ fr:
       open: 'Ouvert'
       close: 'Fermé'
     edit:
+      edit_foodtruck_title: 'Mettez à jour votre foodtruck'
+      foodtruck_save: 'Mettre à jour'
+      foodtruck_name: 'Nom de votre foodtruck'
+      foodtruck_phone: 'Téléphone portable'
+      foodtruck_save: 'Enregistrez-vous'
+      foodtruck_photo: 'Photo du Foodtruck'
     new:
     form_food_truck:
       name_error: 'Le nom du Foodtruck est obligatoire'
@@ -43,6 +49,7 @@ fr:
       navbar:
         add_a_foodtruck: 'Ajoutez un foodtruck'
         profile: 'Compte'
-        home: 'Home'
+        home: 'Accueil'
+        my_foodtruck: 'Mon foodtruck'
         sign_out: 'Déconnexion'
         sign_in: 'Connexion'

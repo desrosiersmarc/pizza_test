@@ -3,15 +3,16 @@
   <div class="navbar-wagon-item">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu">
+      <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu-left">
         <li>
           <%= link_to root_path do %>
-            <p>home</p>
+            <i class="fa fa-home"></i> <%=t('.home')%>
           <% end %>
         </li>
         <li>
           <%= link_to registration_path do %>
-            <p><%= t('.add_a_foodtruck') %></p>
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            <%= t('.add_a_foodtruck') %>
           <% end %>
         </li>
       </ul>
@@ -34,15 +35,15 @@
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-right">
             <li>
               <%= link_to "#" do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-home"></i>  <%= t(".home", default: "Home") %>
+              <%= link_to my_foodtrucks_path do %>
+                <i class="fa fa-truck" aria-hidden="true"></i>  <%= t(".my_foodtruck", default: "Home") %>
               <% end %>
             </li>
             <li>

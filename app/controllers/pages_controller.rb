@@ -11,4 +11,7 @@ class PagesController < ApplicationController
     # @company = JSON.parse(user_serialized)
   end
 
+  def my_foodtrucks
+    @foodtrucks = current_user.food_trucks
+  end
 end
