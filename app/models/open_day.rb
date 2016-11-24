@@ -4,6 +4,10 @@ class OpenDay < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+  #TODO
+  # scope :today, -> (date) { where(date: date) }
+
+  # OpenDay.today(Date.today)
 
   def time_opened_hour
     self.opened_hour.strftime("%H:%M")

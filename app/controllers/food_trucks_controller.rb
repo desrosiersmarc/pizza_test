@@ -8,7 +8,7 @@ class FoodTrucksController < ApplicationController
     @open_days = OpenDay.where(open_days: {day_id:@open_day})
                         .near(@city, 200)
                         .map{|o| o.food_truck_id}
-    @food_trucks = FoodTruck.where("id IN (?)", @open_days)
+    @food_trucks = FoodTruck.where(id: @open_days)
                             .includes(:category, :open_days)
     #TODO replace .map by .pluck(:foodtruck_id)
     #TODO find a solution for multi-opened hour in the same zone and the same day
