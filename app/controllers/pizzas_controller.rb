@@ -3,7 +3,7 @@ class PizzasController < ApplicationController
   before_action :find_pizza, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pizzas = Pizza.all
+    @pizzas = Pizza.all.where('food_truck_id = ?', params['food_truck_id'])
   end
 
   def show

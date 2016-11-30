@@ -11,6 +11,13 @@
       <a href="<%= 'tel:' + @food_truck.phone %>" class="btn btn-danger btn-block"><%= t('.call') %> <%= @food_truck.phone %></a>
       <!-- TODO replace call by a fontawesome.io phone -->
     </div>
+    <div class="col-xs-12 add-padding-bottom">
+      <%= link_to food_truck_pizzas_path do %>
+        <div class="btn btn-danger btn-block">
+          Menu
+        </div>
+      <% end %>
+    </div>
   </div>
     <% @open_days.each do |open_day| %>
       <div class="col-xs-12 col-sm-6 open-day-card-color">
