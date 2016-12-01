@@ -54,13 +54,12 @@ print 'Add pizzas : '
 end
 puts ''
 print 'Add recipes : '
+  Pizza.all.each do |pizza|
+    rand(3..9).times do
+      Recipe.create(pizza_id: pizza.id, ingredient_id: Ingredient.all.sample.id)
+      print '*'
+    end
 
-Pizza.all.each do |pizza|
-  rand(3..9).times do
-    Recipe.create(pizza_id: pizza.id, ingredient_id: Ingredient.all.sample.id)
-    print '*'
-  end
-end
 
 puts ''
 print 'Add days : '
@@ -93,6 +92,9 @@ FoodTruck.all.each do |food_truck|
                     food_truck: food_truck,
                     day: day )
     print '*'
+  end
+  pizza.food_truck = food_truck
+  pizza.save
   end
 end
 
